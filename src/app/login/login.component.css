@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    background-color: #310666;
+    overflow-x: hidden; 
+    overflow-y: hidden; 
+}
+
+body {
+  background-image: url('background.png'); /* Ensure the path to your image is correct */
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Sriracha', cursive;
+  position: relative;
+}
+
+h1 {
+  color: #ffffff;
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem; /* Adjust the size as necessary */
+}
+
+.login-container {
+  width: 400px;
+  padding: 40px; /* Increased padding */
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-container h2 {
+  color: #7D3C98;
+  margin-bottom: 1.5rem;
+}
+
+.login-container label {
+  display: block;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+.login-title {
+  /* Style the "Prihláste sa" text to match the provided picture */
+  font-family: 'Arial', sans-serif; /* Change as needed to match the font */
+  font-size: 24px; /* Adjust the size as needed */
+  color: #7D3C98; /* The color from your provided picture */
+  margin-bottom: 1.5rem;
+}
+
+.login-container input[type=email],
+.login-container input[type=password] {
+  width: 100%;
+  padding: 12px; /* Increased padding */
+  margin-bottom: 0.5rem; /* Adjusted margin */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+.login-container input[type=email]::placeholder,
+.login-container input[type=password]::placeholder {
+  color: #aaa; /* Placeholder text color */
+  opacity: 1; /* Make sure the placeholder is fully visible */
+}
+
+.login-container .forgot-password {
+  color: red; /* Changed to red as requested */
+  display: block; /* Now it's a block element */
+  margin-top: -0.5rem; /* Adjust the position under the password field */
+  margin-bottom: 1.5rem; /* Space before the button */
+  text-align: right; /* Align to the right */
+  text-decoration: none;
+}
+
+.login-container .forgot-password:hover {
+  text-decoration: underline;
+}
+
+.login-container button {
+  width: 100%;
+  padding: 12px; /* Increased padding */
+  border: none;
+  border-radius: 5px;
+  background-color: #ff4081;
+  color: white;
+  font-size: 1rem;
+}
+
+.login-container button:hover {
+  background-color: #e5376a;
+}
+
+.powered-by {
+  background-image: url('logo.png'); /* Replace with the correct path */
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 193px; /* Width of the image */
+  height: 41px; /* Height of the image */
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+}
