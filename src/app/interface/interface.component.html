@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">Logo</div>
+        <hr class="sidebar-separator">
+        <nav class="navigation">
+            <a href="#" class="nav-item"><i class="nav-icon gg-heart"></i>Projekty</a>
+            <a href="#" class="nav-item"><i class="nav-icon gg-heart"></i>Používatelia</a>
+            <a href="#" class="nav-item"><i class="nav-icon gg-heart"></i>Produkty</a>
+            <a href="#" class="nav-item"><i class="fa fa-cog"></i>Nastavenia</a>
+            <a href="#" class="nav-item"><i class="nav-icon gg-profile"></i>Profil</a>
+        </nav>
+        <div class="logout"><i class="gg-log-in"></i><a routerLink="/">Odhlásiť sa</a></div>
+    </div>
+    <div class="main-content">
+        <div class="main-content">
+            <div class="top-bar">
+                <div class="search-bar">
+                    <input type="text" placeholder="Hľadať zadaný výraz" class="search-input">
+                    <button class="search-button"><i class="gg-search"></i></button>
+                </div>
+                <div class="user-name-container">
+                    <span class="user-name">{{ userName }}</span>
+                    <i class="gg-chevron-down"></i>
+                </div>
+            </div>
+        </div>
+
+        <h1>Používatelia</h1>
+        <div class="user-message">
+            <p>V zozname sa nenachádzajú žiadny používatelia</p>
+            <button class="add-user-button"><a class="add-user-button" routerLink="/register">+ Pridať používateľa</a></button>
+        </div>
+    </div>
+</body>
+</html>

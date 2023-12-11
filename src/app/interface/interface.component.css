@@ -1,0 +1,218 @@
+@import url('https://unpkg.com/css.gg@2.0.0/icons/css/profile.css');
+@import url('https://unpkg.com/css.gg@2.0.0/icons/css/heart.css');
+@import url('https://unpkg.com/css.gg@2.0.0/icons/css/search.css');
+@import url('https://unpkg.com/css.gg@2.0.0/icons/css/chevron-down.css');
+@import url('https://unpkg.com/css.gg@2.0.0/icons/css/log-in.css');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden; /* Changed to allow vertical scrolling */
+}
+
+.logo {
+    /* ... existing styles ... */
+    background: white; /* Set the background to white */
+    padding: 20px 10px; /* Add some padding */
+    display: inline-block; /* Make it an inline block to control width and padding */
+    text-align: center;
+    text-decoration-color: purple;
+    margin-left: 25px;
+    margin-bottom: 20px;
+    width: 70%;
+}
+body {
+    display: flex;
+    background-color: #F4F4F8; /* Match the main content background */
+}
+
+.sidebar {
+    background-image: url('navba.png'); /* Adjusted to match the sidebar color from image 1 */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 250px; 
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    border-top-right-radius: 20px; /* Round top right corner */
+    border-bottom-right-radius: 20px; /* Round bottom right corner */
+}
+
+.sidebar-separator {
+    border: none;
+    height: 2px;
+    margin-left: 5%;
+    background-color: rgba(255, 255, 255, 0.2);; /* Color for the separator line */
+    margin-bottom: 20px; /* Space below the line */
+}
+
+.nav-icon {
+    font-size: 24px;
+    margin-right: 15px; /* Increased space between icon and text */
+}
+.fa {
+    margin-right: 15px;
+}
+
+.user-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.user-name-container {
+    display: flex;
+    align-items: center; /* This ensures that the username and arrow are aligned */
+    cursor: pointer; /* Optional: if the user name is clickable */
+}
+
+.user-name {
+    font-size: 20px;
+    color: #333;
+    margin-right: 10px; /* Adjust the space between the name and the arrow */
+}
+
+.gg-chevron-down {
+    font-size: 16px; /* Adjust the size of the arrow as needed */
+    color: #333; /* Set the color of the arrow */
+}
+
+.logout {
+    padding: 10px 20px;
+    color: #FFF;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 20px; /* Adjust to match the sidebar's padding */
+    left: 20px; /* Align with the sidebar's content */
+    width: calc(100% - 40px); /* Adjust width to account for padding */
+}
+.logout a {
+    text-decoration: none; /* Remove underline from the link */
+    color: #FFF; /* Keep the link text color */
+}
+
+
+.logout-icon {
+    margin-right: 10px; /* Space between the icon and text */
+    /* Additional icon styles */
+}
+.gg-log-in{
+    font-size: 16px; /* Adjust the size of the arrow as needed */
+    margin-right: 10px
+}
+
+.navigation {
+    flex-grow: 1;
+}
+
+.nav-item {
+    padding: 10px 20px; /* Increased padding for better spacing */
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    flex-direction: row; /* This will place the icon and text side by side */
+    margin-bottom: 10px;
+    padding-right: 20px;
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.nav-item:hover, .nav-item.active {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px; /* Increased padding for more space */
+    overflow-y: auto; /* Allow vertical scrolling */
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px; /* Increased margin for more space */
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+.search-button {
+    background-color: #e5376a; /* Adjust the color to match the search icon background */
+    border-radius: 50%; /* Make the search icon circular */
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white; /* Change button text color to white */
+}
+
+h1 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 40px; /* Increased margin for more space */
+}
+
+.user-message {
+    text-align: center;
+    padding: 40px; /* Add padding for spacing around the message */
+    background-color: white; /* Match the background from image 1 */
+    border-radius: 4px; /* Add rounded corners */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Add shadow for depth */
+}
+
+.add-user-button {
+    background-color: #e5376a; /* Adjusted to match the button color from image 1 */
+    color: white;
+    border: none;
+    padding: 10px 20px; /* Adjust padding as needed for button size */
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 8px; /* Add margin to separate from other elements */
+}
+
+.add-user-button a {
+    color: inherit;
+    text-align: center;
+    width: 100%;
+    display: block;
+}
+
+
+/* Additional styles for responsiveness and alignment */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .main-content {
+        padding: 20px;
+    }
+}
