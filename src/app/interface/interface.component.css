@@ -18,16 +18,15 @@ html, body {
 }
 
 .logo {
-    /* ... existing styles ... */
-    background: white; /* Set the background to white */
-    padding: 20px 10px; /* Add some padding */
-    display: inline-block; /* Make it an inline block to control width and padding */
-    text-align: center;
-    text-decoration-color: purple;
-    margin-left: 25px;
-    margin-bottom: 20px;
-    width: 70%;
+    background-image: url('logo.png');
+    background-size: contain; /* Ensure the image fits within the container */
+    background-repeat: no-repeat;
+    background-position: center center; /* Center the image both horizontally and vertically */
+    width: 200px; /* Adjust the width as needed */
+    height: 100px; /* Adjust the height as needed */
+    margin: 0 auto; /* Center horizontally within .logo container */
 }
+
 body {
     display: flex;
     background-color: #F4F4F8; /* Match the main content background */
@@ -215,4 +214,280 @@ h1 {
     .main-content {
         padding: 20px;
     }
+}
+
+.user-list-container {
+    max-width: 100%;
+    overflow-x: auto; /* Allows scrolling on small screens */
+  }
+  
+  .user-list-header, .user-row {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    text-align: left;
+  }
+  
+  .user-list-header {
+    padding: 10px;
+    background-color: #E5E5E5;
+    font-weight: bold;
+    position: sticky;
+    top: 0;
+  }
+  
+  .user-list {
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .user-row {
+    padding: 10px;
+    border-bottom: 1px solid #E5E5E5;
+  }
+  
+  .user-row:last-child {
+    border-bottom: none;
+  }
+  
+  .status {
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .active {
+    background-color: #4CAF50; /* or any green shade */
+  }
+  
+  .inactive {
+    background-color: #F44336; /* or any red shade */
+  }
+  
+  .no-users {
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+  }
+  
+  .add-user-link {
+    text-decoration: none; /* Add this line */
+    /* ... other styles ... */
+    }
+
+    /* Adjusting the user-list-header-area to align the button to the right */
+    .user-list-header-area {
+        display: flex;
+        justify-content: space-between; /* This will align the title to the left and the button to the right */
+        align-items: center; /* This will vertically align them in the middle */
+        /* Apply any additional styling you need here */
+    }
+
+    /* Ensure the button itself has no underline */
+    .add-user-button {
+        text-decoration: none; /* Add this line */
+        /* ... other styles ... */
+    }
+
+    .header-container {
+        display: flex;
+        justify-content: space-between; /* This will position the header on the left and the button on the right */
+        align-items: center; /* This will vertically center them in the line */
+        padding: 0 20px; /* Adjust padding as necessary */
+    }
+    
+    /* Make sure the h1 element doesn't have a margin that pushes the button down */
+    h1 {
+        margin: 0;
+        font-size: 32px; /* Adjust the font size if necessary */
+        margin-bottom: 40px;
+    }
+    
+    /* Adjust the button styling to align it properly, and remove any existing margins or padding that may affect its position */
+    .add-user-button {
+        margin: 0;
+        margin-bottom: 40px;
+    }
+
+   .next-page-button {
+    background-color: #e5376a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px; /* Adjust spacing as needed */
+  }
+  
+  /* Disable the button when there are no more pages */
+  .next-page-button[disabled] {
+    background-color: #ccc; /* Gray out the button */
+    cursor: not-allowed;
+  }
+
+.bottom-right-container {
+  display: flex;
+  justify-content: center; /* Align to the right side */
+  align-items: center;
+  padding: 20px;
+  background-color: #F4F4F8; /* Assuming this is your background color */
+  border-top: 1px solid #eaeaea; /* A border to separate from the content */
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: auto; /* Remove influence from the left side */
+  width: auto; /* Auto width based on content */
+}
+/* In your component's stylesheet (e.g., user-list.component.scss) */
+.user-list-header, .user-row {
+    display: grid;
+    grid-template-columns: 5% 20% 25% 25% 10% 15%; /* Adjust based on your requirements */
+    align-items: center;
+  }
+/* Include this CSS in your component's stylesheet */
+.status-button {
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 90px; /* Set a fixed width for uniform buttons */
+  }
+  
+  .active {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+  }
+  
+  .inactive {
+    background-color: #ccc; /* Gray background */
+    color: #333; /* Darker text */
+  }
+  
+  /* Icons for active/inactive states */
+  .active:before {
+    display: inline-block;
+    margin-right: 5px;
+  }
+  
+  .inactive:before {
+    display: inline-block;
+    margin-right: 5px;
+  }
+  
+  .header-checkbox, .row-checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Additional styles for checkbox alignment */
+  input[type="checkbox"] {
+    margin-right: 0; /* Adjust if needed */
+  }
+  
+.items-per-page {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #333;
+  margin-right: 20px; /* Adjust space between the items-per-page and pagination */
+}
+
+.items-per-page select {
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 5px 10px;
+  margin-left: 10px;
+  font-size: 14px;
+  color: #333;
+}
+.pagination-container {
+    display: flex;
+    justify-content: center; /* Center pagination controls */
+    align-items: center;
+    padding-bottom: 20px; /* Adjust based on your layout */
+}
+  
+/* Swap places for rows and pages info */
+.pagination-info {
+  margin-right: 30px; /* Or however much space you need */
+}
+
+/* Style for page number input if you want to allow direct typing */
+.page-number-input {
+  width: 50px; /* Or however wide you want it */
+  text-align: center;
+}
+
+.next-page-button, .previous-page-button {
+    background-color: #e5376a; /* Primary button color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+
+/* This will remove the excess white space */
+.main-content {
+  padding-bottom: 80px; /* Adjust the padding-bottom to the height of the .bottom-right-container */
+}
+.jump-to-page-container {
+    position: absolute; /* or 'fixed' if it should stay in view during scrolling */
+    left: 10%; /* Align to the right edge of the parent container */
+    bottom: 20px; /* Position from the bottom */
+}  
+
+.jump-to-page {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
+  
+  .jump-input {
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 10px 20px;
+    width: 60px; /* Adjust as needed */
+  }
+  
+  .jump-button {
+    background-color: #e5376a; /* Match the design of other buttons */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-right: 10px;
+  }
+  
+  .jump-button:hover {
+    background-color: #c42759; /* Darker shade for hover effect */
+  }
+  
+/* Add this to ensure the bottom container doesn't overlap your content */
+@media (max-width: 768px) {
+  .bottom-right-container {
+    position: relative; /* or absolute, depending on your layout */
+    width: 100%; /* Take full width on small screens */
+  }
+  
+  .main-content {
+    padding-bottom: 0; /* Reset padding for mobile view */
+  }
 }

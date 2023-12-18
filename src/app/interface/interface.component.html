@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="sidebar">
-        <div class="logo">Logo</div>
+        <div class="logo"></div>
         <hr class="sidebar-separator">
         <nav class="navigation">
             <a href="#" class="nav-item"><i class="nav-icon gg-heart"></i>Projekty</a>
@@ -32,12 +32,84 @@
                 </div>
             </div>
         </div>
-
-        <h1>Používatelia</h1>
-        <div class="user-message">
-            <p>V zozname sa nenachádzajú žiadny používatelia</p>
-            <button class="add-user-button"><a class="add-user-button" routerLink="/register">+ Pridať používateľa</a></button>
+        
+  
+        <div *ngIf="users.length > 0; else noUsersTemplate">
+            <div class="user-list-header-area">
+                <h1>Používatelia</h1>
+                  <span class="sort-lockoutEnabled" (click)="toggleSortlockoutEnabled()">
+                     Stav {{ sortlockoutEnabledAsc ? '▲' : '▼' }}
+                  </span>
+                  <span class="sort-status" (click)="toggleSortStatus()">
+                    Mestská časť {{ sortStatusAsc ? '▲' : '▼' }}
+                  </span>
+                <button class="add-user-button"><a class="add-user-link" routerLink="/register">+ Pridať používateľa</a></button>
+              </div>
+          <div class="user-list-container">
+            <div class="user-list-header">
+            <span class="header-checkbox">
+                <input type="checkbox" [(ngModel)]="selectAll" (change)="toggleAll()">
+            </span>
+              <span>ID Zamestnanca</span>
+              <span>Meno Priezvisko</span>
+              <span>E-mail</span>
+              <span>Mestská Časť</span>
+              <span>Stav</span>
+            </div>
+            <div class="user-list">
+                <div *ngFor="let user of filteredUsers; trackBy: trackByUserId" class="user-row">
+                <span class="row-checkbox">
+                    <input type="checkbox" [(ngModel)]="user.selected" (change)="updateSelectAll()">
+                </span>
+                <span>{{ user.id }}</span>
+                <span>{{ user.firstName }} {{ user.lastName }}</span>
+                <span>{{ user.email }}</span>
+                <span>{{ user.district }}</span>
+                <span [ngClass]="{'status-button': true, 'active': !user.lockoutEnabled, 'inactive': user.lockoutEnabled}">
+                    {{ user.lockoutEnabled ? 'Neaktívny' : 'Aktívny' }}
+                  <button (click)="toggleActive(user)">Toggle State</button>
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
+      
+        <ng-template #noUsersTemplate>
+            <h1>Používatelia</h1>
+            <span class="sort-status" (click)="toggleSortStatus()">
+                Stav {{ sortStatusAsc ? '(A-Z)' : '(Z-A)' }}
+              </span>
+              <span class="sort-lockoutEnabled" (click)="toggleSortlockoutEnabled()">
+                Mestská časť {{ sortlockoutEnabledAsc ? '(A-Z)' : '(Z-A)' }}
+              </span>
+            <div class="user-message">
+              <p>V zozname sa nenachádzajú žiadny používatelia</p>
+              <button class="add-user-button-centered"><a class="add-user-link" routerLink="/register">+ Pridať používateľa</a></button>
+            </div>
+        </ng-template>
+      </div>
+      <div class="bottom-right-container">
+        <div class="items-per-page">
+
+            <div class="pagination">
+                <button class="next-page-button" (click)="prevPage()" [disabled]="currentPage === 1">Previous</button>
+                <span>{{ currentPage }} / {{ totalPages }}</span>
+                <button class="next-page-button" (click)="nextPage()" [disabled]="currentPage >= totalPages">Next Page</button>
+            </div>
+            <div class="jump-to-page">
+                <input type="number" [(ngModel)]="jumpToPage" class="jump-input" placeholder="Page #" />
+                <button class="jump-button" (click)="goToPage(jumpToPage)">Go to Page</button>
+            </div>
+            <label for="itemsPerPageSelect">Zobrazit riadkov na stranku:</label>
+            <select id="itemsPerPageSelect" [(ngModel)]="itemsPerPage" (change)="onItemsPerPageChange()">
+                <option value="2">2</option>
+                <option value="5">5</option>
+                <option value="10">10</option>
+            </select>
+            <span>{{ displayedRange }} </span>
+            <span>  z {{ totalItems }}</span>
+        </div>
+      </div>
+    
 </body>
 </html>

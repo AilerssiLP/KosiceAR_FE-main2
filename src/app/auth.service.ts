@@ -58,6 +58,11 @@ resetPassword(email: string, token: string, expiration: string, password: string
 }
 
 
+getUsers(): Observable<any> {
+  const usersUrl = 'https://localhost:7047/api/AdministrationController/getallusers';
+  return this.http.get(usersUrl);
+}
+
 
   registerUser(userData: any): Observable<any> {
     const registrationData = {
